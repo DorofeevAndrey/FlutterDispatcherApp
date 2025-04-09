@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:dispatcherapp/config/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../styles.dart';
+
 class AccentButton extends StatelessWidget {
   final String title;
   final Function() onTap;
@@ -26,11 +28,7 @@ class AccentButton extends StatelessWidget {
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
         title,
-        style: TextStyle(
-          color: surfaceyColor,
-          fontSize: 14,
-          fontWeight: FontWeight.w600,
-        ),
+        style: accentButtonStyle,
       ),
     );
   }

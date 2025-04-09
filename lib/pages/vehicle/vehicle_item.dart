@@ -2,6 +2,8 @@ import 'package:dispatcherapp/config/colors.dart';
 import 'package:dispatcherapp/config/images.dart';
 import 'package:flutter/material.dart';
 
+import '../../config/styles.dart';
+
 class VehicleItem extends StatelessWidget {
   const VehicleItem({super.key});
 
@@ -43,43 +45,22 @@ class VehicleItem extends StatelessWidget {
               'BMW GS-7638',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                color: secondaryColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
+              style: body2TextStyle,
             ),
             false
                 ? Text(
                   'No driver',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: secondaryVariantColor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: hint1TextStyle,
                 )
                 : RichText(
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   text: TextSpan(
-                    style: TextStyle(fontSize: 14),
                     children: [
-                      TextSpan(
-                        text: 'Driver: ',
-                        style: TextStyle(
-                          color: secondaryVariantColor,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Paul',
-                        style: TextStyle(
-                          color: secondaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      TextSpan(text: 'Driver: ', style: hint1TextStyle),
+                      TextSpan(text: 'Paul', style: body2TextStyle),
                     ],
                   ),
                 ),
@@ -95,17 +76,7 @@ class VehicleItem extends StatelessWidget {
       onTap: () => {},
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          statePickupImage,
-          Text(
-            'pickup',
-            style: TextStyle(
-              color: secondaryVariantColor,
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-        ],
+        children: [statePickupImage, Text('pickup', style: hint2TextStyle)],
       ),
     );
   }

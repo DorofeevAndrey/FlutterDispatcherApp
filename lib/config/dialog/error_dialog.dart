@@ -2,6 +2,8 @@ import 'package:dispatcherapp/config/colors.dart';
 import 'package:dispatcherapp/config/widgets/accent_button.dart';
 import 'package:flutter/material.dart';
 
+import '../styles.dart';
+
 class ErrorDialog extends StatelessWidget {
   final String description;
 
@@ -17,23 +19,9 @@ class ErrorDialog extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              'Oops...',
-              style: TextStyle(
-                color: secondaryColor,
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+            Text('Oops...', style: head1TextStyle),
             const SizedBox(height: 8),
-            Text(
-              description,
-              style: const TextStyle(
-                color: secondaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
+            Text(description, style: body1TextStyle),
             const SizedBox(height: 20),
             Center(
               child: AccentButton(
