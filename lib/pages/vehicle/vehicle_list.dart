@@ -1,4 +1,5 @@
 import 'package:dispatcherapp/config/colors.dart';
+import 'package:dispatcherapp/config/dialog/error_dialog.dart';
 import 'package:dispatcherapp/config/widgets/accent_button.dart';
 import 'package:dispatcherapp/pages/vehicle/vehicle_item.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class VehicleList extends StatelessWidget {
     return Stack(
       children: [
         _list(context),
-        Align(alignment: Alignment.bottomCenter, child: _updateButton()),
+        Align(alignment: Alignment.bottomCenter, child: _updateButton(context)),
       ],
     );
   }
@@ -37,12 +38,26 @@ class VehicleList extends StatelessWidget {
     );
   }
 
-  Widget _updateButton() {
+  Widget _updateButton(BuildContext context) {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(right: 16, left: 16, bottom: 8),
-        child: AccentButton(title: 'Update', onTap: () => {}),
+        child: AccentButton(
+          title: 'Update',
+          onTap: () => {_showErrorDialog(context)},
+        ),
       ),
+    );
+  }
+
+  void _showErrorDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return ErrorDialog(
+          description: 'Server is unavailable. Please try again later.',
+        );
+      },
     );
   }
 }
