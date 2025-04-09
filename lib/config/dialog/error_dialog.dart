@@ -1,4 +1,3 @@
-import 'package:dispatcherapp/config/colors.dart';
 import 'package:dispatcherapp/config/widgets/accent_button.dart';
 import 'package:flutter/material.dart';
 

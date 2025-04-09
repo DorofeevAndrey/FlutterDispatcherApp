@@ -1,8 +1,9 @@
-import 'package:dispatcherapp/config/colors.dart';
 import 'package:dispatcherapp/config/dialog/error_dialog.dart';
 import 'package:dispatcherapp/config/widgets/accent_button.dart';
 import 'package:dispatcherapp/pages/vehicle/vehicle_item.dart';
 import 'package:flutter/material.dart';
+
+import '../driver/driver_page.dart';
 
 class VehicleList extends StatelessWidget {
   const VehicleList({super.key});
@@ -32,8 +33,12 @@ class VehicleList extends StatelessWidget {
       separatorBuilder: (context, index) {
         return const SizedBox(height: 8);
       },
-      itemBuilder: (context, index) {
-        return const VehicleItem();
+      itemBuilder: (BuildContext context, int index) {
+        return VehicleItem(
+          onTap: () async {
+            await _showDriverPage(context);
+          },
+        );
       },
     );
   }
@@ -44,7 +49,9 @@ class VehicleList extends StatelessWidget {
         padding: const EdgeInsets.only(right: 16, left: 16, bottom: 8),
         child: AccentButton(
           title: 'Update',
-          onTap: () => {_showErrorDialog(context)},
+          onTap: () {
+            _showErrorDialog(context);
+          },
         ),
       ),
     );
@@ -58,6 +65,17 @@ class VehicleList extends StatelessWidget {
           description: 'Server is unavailable. Please try again later.',
         );
       },
+    );
+  }
+
+  Future<void> _showDriverPage(BuildContext context) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return const DriverPage();
+        },
+      ),
     );
   }
 }

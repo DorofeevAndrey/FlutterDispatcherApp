@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import '../../config/styles.dart';
 
 class VehicleItem extends StatelessWidget {
-  const VehicleItem({super.key});
+  final Function() onTap;
+  const VehicleItem({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class VehicleItem extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         child: InkWell(
           borderRadius: BorderRadius.circular(8),
-          onTap: () => {},
+          onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.only(
               left: 8,

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dispatcherapp/config/colors.dart';
 import 'package:flutter/material.dart';
 
