@@ -1,4 +1,5 @@
 import 'package:dispatcherapp/config/colors.dart';
+import 'package:dispatcherapp/config/widgets/accent_button.dart';
 import 'package:dispatcherapp/pages/vehicle/vehicle_item.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +25,6 @@ class VehicleList extends StatelessWidget {
   }
 
   Widget _updateButton() {
-    return Container();
+    return AccentButton(title: 'Update', onTap: () => {});
   }
 }
