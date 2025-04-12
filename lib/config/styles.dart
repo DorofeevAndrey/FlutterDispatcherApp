@@ -15,7 +15,7 @@ const TextStyle primaryTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
 );
 
-const TextStyle body1TextStyle = const TextStyle(
+const TextStyle body1TextStyle = TextStyle(
   color: secondaryColor,
   fontSize: 16,
   fontWeight: FontWeight.w400,
@@ -27,19 +27,19 @@ const TextStyle accentButtonStyle = TextStyle(
   fontWeight: FontWeight.w600,
 );
 
-const TextStyle body2TextStyle = const TextStyle(
+const TextStyle body2TextStyle = TextStyle(
   color: secondaryColor,
   fontSize: 14,
   fontWeight: FontWeight.w600,
 );
 
-const TextStyle hint1TextStyle = const TextStyle(
+const TextStyle hint1TextStyle = TextStyle(
   color: secondaryVariantColor,
   fontSize: 14,
   fontWeight: FontWeight.w400,
 );
 
-const TextStyle hint2TextStyle = const TextStyle(
+const TextStyle hint2TextStyle = TextStyle(
   color: secondaryVariantColor,
   fontSize: 12,
   fontWeight: FontWeight.w400,

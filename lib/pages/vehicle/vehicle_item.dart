@@ -3,6 +3,7 @@ import 'package:dispatcherapp/config/images.dart';
 import 'package:flutter/material.dart';
 
 import '../../config/styles.dart';
+import '../vehicale_state/vehicle_state_page.dart';
 
 class VehicleItem extends StatelessWidget {
   final Function() onTap;
@@ -27,7 +28,7 @@ class VehicleItem extends StatelessWidget {
               right: 16,
               bottom: 8,
             ),
-            child: Row(children: [motorcycleImage, _title(), _state()]),
+            child: Row(children: [motorcycleImage, _title(), _state(context)]),
           ),
         ),
       ),
@@ -71,10 +72,18 @@ class VehicleItem extends StatelessWidget {
     );
   }
 
-  Widget _state() {
+  Widget _state(context) {
     return InkWell(
       borderRadius: BorderRadius.circular(8),
-      onTap: () => {},
+      onTap:
+          () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return VehicleStatePage();
+              },
+            ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [statePickupImage, Text('pickup', style: hint2TextStyle)],

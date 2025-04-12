@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 
 import '../../config/widgets/accent_button.dart';
 
-class DriverList extends StatefulWidget {
-  const DriverList({super.key});
+class VehicalStateList extends StatefulWidget {
+  const VehicalStateList({super.key});
 
   @override
-  State<DriverList> createState() => _DriverListState();
+  State<VehicalStateList> createState() => _DriverListState();
 }
 
-class _DriverListState extends State<DriverList> {
-  int? _selectedDriverIndex;
+class _DriverListState extends State<VehicalStateList> {
+  int? _selectedStateIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -40,18 +40,18 @@ class _DriverListState extends State<DriverList> {
         return const SizedBox(height: 8);
       },
       itemBuilder: (context, index) {
-        final bool isSelected = _selectedDriverIndex == index;
+        final bool isSelected = _selectedStateIndex == index;
         return SelectableItem(
-          image: accountCircleImage,
-          leftPadding: 8,
+          image: statePickupImage,
+          leftPadding: 16,
           onTap:
               () => {
                 setState(() {
-                  _selectedDriverIndex = index;
+                  _selectedStateIndex = index;
                 }),
               },
           IsSelected: isSelected,
-          title: 'Paul',
+          title: 'Pickup',
         );
       },
     );
